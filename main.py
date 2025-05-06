@@ -12,6 +12,8 @@ def main():
         match command:
             case 'exit':
                 exit()
+            case 'echo':
+                sys.stdout.write(' '.join(args)+'\n')
 
 
 if __name__ == "__main__":
