@@ -5,8 +5,13 @@ def main():
     while True:
         sys.stdout.write("$ ")
         sys.stdout.flush()
-        command = sys.stdin.readline().rstrip('\n')
-        sys.stdout.write(f'{command}: command not found')
+        try:
+            command, *args = sys.stdin.readline().rstrip('\n').split()
+        except ValueError:
+            continue
+        match command:
+            case 'exit':
+                exit()
 
 
 if __name__ == "__main__":
