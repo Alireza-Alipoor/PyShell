@@ -51,8 +51,10 @@ def main():
         try:
             input = sys.stdin.readline()
             handle_input(input)
-        except ValueError:
-            continue
+        except KeyboardInterrupt:
+            sys.exit()
+        except Exception as e:
+            sys.stdout.write(f'Error: {e!r}\n')
 
 
 if __name__ == "__main__":
