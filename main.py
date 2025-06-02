@@ -28,8 +28,8 @@ def handle_exit():
     ...
 
 
-def handle_echo():
-    ...
+def handle_echo(args):
+    sys.stdout.write(' '.join(args)+'\n')
 
 
 def handle_type():
