@@ -2,12 +2,13 @@ import sys
 import shutil
 import shlex
 import subprocess
+from pathlib import Path
 
 COMMANDS = {
     "exit": lambda args: handle_exit(args),
     "echo": lambda args: handle_echo(args),
     "type": lambda args: handle_type(args),
-    "pwd": lambda args: handle_pwd(args),
+    "pwd": lambda _: handle_pwd(),
     "cd": lambda args: handle_cd(args)}
 
 
@@ -37,7 +38,7 @@ def handle_type():
 
 
 def handle_pwd():
-    ...
+    sys.stdout.write(str(Path.cwd())+'\n')
 
 
 def handle_cd():
